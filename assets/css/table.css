@@ -1,0 +1,178 @@
+		/* Seção da tabela */
+#tabela {
+  background: #f8f9fa;
+  color: #333;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#tabela h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+#tabela p {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Container da tabela */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/* ==========================================================
+   SEÇÃO DA TABELA
+   ========================================================== */
+#tabela {
+  background: #f4f6f8;
+  color: #333;
+  padding: 50px 15px;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#tabela h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+#tabela p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* ==========================================================
+   CONTAINER E TABELA
+   ========================================================== */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================
+   CABEÇALHO DA TABELA
+   ========================================================== */
+th {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   CÉLULAS
+   ========================================================== */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+/* Linhas alternadas */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Efeito hover */
+tbody tr:hover {
+  background-color: #eef5ff;
+  transition: 0.3s ease;
+}
+
+/* ==========================================================
+   BOTÕES DE AÇÃO
+   ========================================================== */
+.btn {
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 3px;
+  display: inline-block;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn.editar {
+  background: #27ae60;
+}
+
+.btn.editar:hover {
+  background: #1f8b4d;
+}
+
+.btn.excluir {
+  background: #e74c3c;
+}
+
+.btn.excluir:hover {
+  background: #c0392b;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+   ========================================================== */
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+  #tabela {
+    padding: 40px 10px;
+  }
+
+  #tabela h2 {
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Para telas menores que 480px (celulares) */
+@media (max-width: 480px) {
+  #tabela h2 {
+    font-size: 1.3rem;
+  }
+
+  #tabela p {
+    font-size: 0.9rem;
+  }
+
+  table {
+    min-width: 480px; /* Cria rolagem horizontal suave */
+  }
+
+  .table-wrapper {
+    border-radius: 8px;
+  }
+}
