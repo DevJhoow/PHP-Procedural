@@ -13,6 +13,9 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
+		<!-- conexao para pagina toda  -->
+		<?php require_once './src/conexao.php'; ?>
+
 	</head>
 	<body class="is-preload">
 
@@ -91,6 +94,9 @@
 					</section>
 
 				<!-- Formulário -->
+				 <?php
+				 	require_once './src/cadastrar_cliente.php';
+				 ?>
 					<section id="cadastro" class="py-5 bg-light">
 					<div class="container d-flex justify-content-center">
 						<div class="card shadow p-4" style="max-width: 500px; width: 100%;">
@@ -98,10 +104,10 @@
 							<i class="fa-solid fa-user-plus"></i> Cadastrar Pessoa
 						</h4>
 
-						<form action="store.php" method="POST">
+						<form action="" method="POST">
 							<div class="mb-3 input-group input-group-sm">
 							<span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-							<input type="text" name="nome" class="form-control" placeholder="Nome" required>
+							<input type="text" name="nome" value="<?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" class="form-control" placeholder="Nome" required>
 							</div>
 
 							<div class="mb-3 input-group input-group-sm">
@@ -120,7 +126,7 @@
 							</div>
 
 							<button type="submit" class="btn btn-primary w-100">
-							<i class="fa-solid fa-floppy-disk"></i> Cadastrar
+							<i class="fa-solid fa-floppy-disk"></i> Salvar
 							</button>
 						</form>
 						</div>
