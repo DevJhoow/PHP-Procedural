@@ -107,7 +107,7 @@
 						<form action="" method="POST">
 							<div class="mb-3 input-group input-group-sm">
 							<span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-							<input type="text" name="nome" value="<?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" class="form-control" placeholder="Nome" required>
+							<input type="text" name="nome" class="form-control" placeholder="Nome" required>
 							</div>
 
 							<div class="mb-3 input-group input-group-sm">
@@ -155,56 +155,38 @@
 								<th><i class="fa-solid fa-gear"></i> Ações</th>
 							</tr>
 							</thead>
+							
 							<tbody>
-							<!-- Dados fictícios apenas para visual -->
-							<tr>
-								<td>1</td>
-								<td>Jonathan</td>
-								<td>Rodrigues</td>
-								<td>(19) 98863-0793</td>
-								<td>jonathan@email.com</td>
-								<td>11/11/2025</td>
-								<td>
-								<a href="#" class="btn btn-sm btn-warning me-1">
-									<i class="fa-solid fa-pen"></i> Editar
-								</a>
-								<a href="#" class="btn btn-sm btn-danger">
-									<i class="fa-solid fa-trash"></i> Excluir
-								</a>
-								</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Ana</td>
-								<td>Souza</td>
-								<td>(19) 98877-6543</td>
-								<td>ana.souza@email.com</td>
-								<td>10/11/2025</td>
-								<td>
-								<a href="#" class="btn btn-sm btn-warning me-1">
-									<i class="fa-solid fa-pen"></i> Editar
-								</a>
-								<a href="#" class="btn btn-sm btn-danger">
-									<i class="fa-solid fa-trash"></i> Excluir
-								</a>
-								</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>Lucas</td>
-								<td>Pereira</td>
-								<td>(19) 97777-4321</td>
-								<td>lucas.pereira@email.com</td>
-								<td>09/11/2025</td>
-								<td>
-								<a href="#" class="btn btn-sm btn-warning me-1">
-									<i class="fa-solid fa-pen"></i> Editar
-								</a>
-								<a href="#" class="btn btn-sm btn-danger">
-									<i class="fa-solid fa-trash"></i> Excluir
-								</a>
-								</td>
-							</tr>
+							<?php
+								require_once './src/exibir.php';
+
+								while($pessoa = $dados->fetch_assoc()) : 
+
+								$data_formatada = date("d/m/Y", strtotime($pessoa['data']));
+								$telefone_formatado = formatar_telefone($pessoa['telefone']);
+								$nome_formatado = formatar_nome($pessoa['nome']);
+   							    $sobrenome_formatado = formatar_nome($pessoa['sobrenome']);
+							?>
+
+								<tr>
+									<td><?= $pessoa['id'] ?></td>
+									<td><?= $nome_formatado ?></td>
+									<td><?= $sobrenome_formatado ?></td>
+									<td><?= $telefone_formatado ?></td>
+									<td><?= $pessoa['email'] ?></td>
+									<td><?= $data_formatada ?></td>
+									
+									<td>
+									<a href="#" class="btn btn-sm btn-warning me-1">
+										<i class="fa-solid fa-pen"></i> Editar
+									</a>
+									<a href="#" class="btn btn-sm btn-danger">
+										<i class="fa-solid fa-trash"></i> Excluir
+									</a>
+									</td>
+								</tr>
+							<?php endwhile ;?>
+
 							</tbody>
 						</table>
 						</div>
@@ -276,6 +258,7 @@
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/cadsatro.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 

@@ -2,9 +2,9 @@
 <?php   
 
     $host = "localhost";
-    $db = "crud_php";
     $user = "root";
     $pass = "";
+    $db = "crud_php";
 
     $mysqli = new mysqli($host, $user, $pass, $db);
     if($mysqli->connect_errno) {
